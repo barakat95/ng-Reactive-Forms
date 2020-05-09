@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+      <h3>This is Task Form</h3>
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Project Name</label>
+          <input type="text" id="project-name" class="form-control" formControlName="projectName"
+            placeholder="Your name, please!" placeholder="Project Name">
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="text" id="email" class="form-control" formControlName="email" placeholder="Your email, please!"
+            placeholder="email">
+        </div>
+        <div class="form-group">
+          <label for="status"></label>
+          <select id="status" class="form-control" formControlName="projectStatus">
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!taskForm.valid">Create Project</button>
+      </form>
+    </div>
+  </div>
+</div>
